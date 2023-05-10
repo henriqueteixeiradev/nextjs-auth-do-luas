@@ -1,0 +1,21 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id          String    @id
+  companyName String    @map("company_name")
+  email       String    @unique
+  password    String
+  username    String    @unique
+  updatedAt   DateTime? @map("updated_at")
+  createdAt   DateTime  @map("created_at")
+
+  @@map("tb_companies")
+}

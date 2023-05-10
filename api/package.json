@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "scripts": {
+    "dev": "dotenv -v NODE_ENV=development -e .env.development -- tsx watch src/server.ts",
+    "migrate": "dotenv -v NODE_ENV=development -e .env.development -- prisma migrate dev"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.14.0",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^5.0.0-beta.1",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/node": "^20.1.1",
+    "dotenv-cli": "^7.2.1",
+    "prisma": "^4.14.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.4"
+  },
+  "prisma": {
+    "schema": "./src/database/schema.prisma"
+  },
+  "license": "UNLICENSED"
+}
